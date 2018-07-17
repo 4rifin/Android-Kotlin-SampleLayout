@@ -40,28 +40,28 @@ class CityAdapter(val context: Context, private val cities: List<City>) : Recycl
                 //Toast.makeText(context,currentHobby!!.title + " Clicked!",Toast.LENGTH_SHORT).show()
                 currentCity?.let {
                     Toast.makeText(context, currentCity!!.title + " Clicked!", Toast.LENGTH_SHORT).show()
-                    if (currentCity!!.title.contains("Jakarta", ignoreCase = true)) {
+                    if (currentCity!!.title.equals("Jakarta", ignoreCase = true)) {
                         val intent = Intent(context, MainActivity::class.java)
                         context.startActivity(Intent.createChooser(intent, "Jakarta"))
                     }
 
-                    if (currentCity!!.title.contains("Bandung", ignoreCase = true)) {
+                    if (currentCity!!.title.equals("Bandung", ignoreCase = true)) {
                         val intent = Intent(context, BandungActivity::class.java)
                         context.startActivity(Intent.createChooser(intent, TAG))
                         //Toast.makeText(context,currentCity!!.title,Toast.LENGTH_SHORT).show()
                     }
 
-                    if (currentCity!!.title.contains("Bekasi", ignoreCase = true)) {
+                    if (currentCity!!.title.equals("Bekasi", ignoreCase = true)) {
                         val intent = Intent(context, BekasiActivity::class.java)
                         context.startActivity(Intent.createChooser(intent, "Bekasi"))
                     }
 
-                    if (currentCity!!.title.contains("Yogjakarta", ignoreCase = true)) {
+                    if (currentCity!!.title.equals("Yogjakarta", ignoreCase = true)) {
                         val intent = Intent(context, YogjaActivity::class.java)
                         context.startActivity(Intent.createChooser(intent, TAG))
                     }
 
-                    if (currentCity!!.title.contains("Surabaya", ignoreCase = true)) {
+                    if (currentCity!!.title.equals("Surabaya", ignoreCase = true)) {
                         val intent = Intent(context, SurabayaActivity::class.java)
                         context.startActivity(Intent.createChooser(intent, TAG))
                     }

@@ -2,26 +2,24 @@ package com.smartherd.samplelayout
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.smartherd.samplelayout.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class YogjaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.activity_yogjakarta)
         SetTiltle()
         SetDescription()
     }
 
     fun SetTiltle() {
-      val titleCity: String = resources.getText(R.string.titleCityJakarta).toString()
+      val titleCity: String = resources.getText(R.string.titleCityYogja).toString()
         tvTitleCity.text = titleCity.toString()
     }
 
     fun SetDescription(){
-        val descriptionJakarta: String = resources.getString(R.string.descriptionCityJakarta).toString()
-        tvDescriptionCity.text = descriptionJakarta.toString()
+        val descriptionCity: String = resources.getString(R.string.descriptionCityYogja).toString()
+        tvDescriptionCity.text = descriptionCity.toString()
     }
 }

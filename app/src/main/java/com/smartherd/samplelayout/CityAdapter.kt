@@ -15,7 +15,7 @@ class CityAdapter(val context: Context, private val cities: List<City>) : Recycl
         val TAG: String = CityAdapter::class.java.simpleName
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolded{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolded {
         val view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
         return MyViewHolded(view)
     }
@@ -24,7 +24,7 @@ class CityAdapter(val context: Context, private val cities: List<City>) : Recycl
         return cities.size
     }
 
-    override fun onBindViewHolder(holder:MyViewHolded, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolded, position: Int) {
         val hobby = cities[position]
         holder.setData(hobby, position)
     }
@@ -39,7 +39,32 @@ class CityAdapter(val context: Context, private val cities: List<City>) : Recycl
             itemView.setOnClickListener {
                 //Toast.makeText(context,currentHobby!!.title + " Clicked!",Toast.LENGTH_SHORT).show()
                 currentCity?.let {
-                    Toast.makeText(context,currentCity!!.title + " Clicked!",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, currentCity!!.title + " Clicked!", Toast.LENGTH_SHORT).show()
+                    if (currentCity!!.title.contains("Jakarta", ignoreCase = true)) {
+                        val intent = Intent(context, MainActivity::class.java)
+                        context.startActivity(Intent.createChooser(intent, "Jakarta"))
+                    }
+
+                    if (currentCity!!.title.contains("Bandung", ignoreCase = true)) {
+                        val intent = Intent(context, BandungActivity::class.java)
+                        context.startActivity(Intent.createChooser(intent, TAG))
+                        //Toast.makeText(context,currentCity!!.title,Toast.LENGTH_SHORT).show()
+                    }
+
+                    if (currentCity!!.title.contains("Bekasi", ignoreCase = true)) {
+                        val intent = Intent(context, BekasiActivity::class.java)
+                        context.startActivity(Intent.createChooser(intent, "Bekasi"))
+                    }
+
+                    if (currentCity!!.title.contains("Yogjakarta", ignoreCase = true)) {
+                        val intent = Intent(context, YogjaActivity::class.java)
+                        context.startActivity(Intent.createChooser(intent, TAG))
+                    }
+
+                    if (currentCity!!.title.contains("Surabaya", ignoreCase = true)) {
+                        val intent = Intent(context, SurabayaActivity::class.java)
+                        context.startActivity(Intent.createChooser(intent, TAG))
+                    }
 
                 }
                 //context.showToast(currentHobby!!.title + " Clicked!")
